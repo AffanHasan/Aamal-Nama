@@ -14,9 +14,9 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import org.jboss.as.quickstarts.kitchensink.model.Day;
-import org.jboss.as.quickstarts.kitchensink.model.Gunah;
 import org.jboss.as.quickstarts.kitchensink.model.Member;
-import org.jboss.as.quickstarts.kitchensink.model.Neky;
+import org.jboss.as.quickstarts.kitchensink.model.gunah.Gunah;
+import org.jboss.as.quickstarts.kitchensink.model.neky.Neky;
 
 // The @Stateful annotation eliminates the need for manual transaction demarcation
 @Stateful
@@ -61,21 +61,21 @@ public class MemberRegistration {
 	   Date date = new Date();
 	   day.setDate(date);
 	   
-	   Neky neky = new Neky();
-	   neky.setDay(day);
-	   neky.setStartTime(date);
-	   neky.setDescription("Offered qaza Namaz");
-	   neky.setImprovementNote("Leave every thing at the time of namaz; but however if it is qaza then perform it at the first sigh of relief");
+//	   Neky neky = new Neky();
+//	   neky.setDay(day);
+//	   neky.setStartTime(date);
+//	   neky.setDescription("Offered qaza Namaz");
+//	   neky.setImprovementNote("Leave every thing at the time of namaz; but however if it is qaza then perform it at the first sigh of relief");
 	   
-	   Gunah gunah = new Gunah();
-	   gunah.setDay(day);
-	   gunah.setStartTime(date);
-	   gunah.setDescription("Became leaked");
-	   gunah.setRootCause("Lack of self control");
-	   gunah.setRemedy("Always control yourself and look before you leap");
+//	   Gunah gunah = new Gunah();
+//	   gunah.setDay(day);
+//	   gunah.setStartTime(date);
+//	   gunah.setDescription("Became leaked");
+//	   gunah.setRootCause("Lack of self control");
+//	   gunah.setRemedy("Always control yourself and look before you leap");
 	   
-	   day.getGoodDeeds().add(neky);
-	   day.getBadDeeds().add(gunah);
+//	   day.getGoodDeeds().add(neky);
+//	   day.getBadDeeds().add(gunah);
 	   em.persist(day);
    }
    

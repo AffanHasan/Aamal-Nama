@@ -1,8 +1,9 @@
-package org.jboss.as.quickstarts.kitchensink.model;
+package org.jboss.as.quickstarts.kitchensink.model.gunah;
 
 import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.jboss.as.quickstarts.kitchensink.model.BaseActivity;
@@ -12,17 +13,19 @@ import org.jboss.as.quickstarts.kitchensink.model.BaseActivity;
  *
  * @author AffanHasan
  */
-@Entity
-@Table(name = "gunah")
-public class Gunah extends BaseActivity implements Serializable {
+
+@MappedSuperclass
+public abstract class Gunah extends BaseActivity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@NotEmpty
+	@Size(max = 313, message = "Breached limit of 313")
 	@Column(name="root_cause", length = 313)
 	private String rootCause;
 	
 	@NotEmpty
+	@Size(max = 313, message = "Breached limit of 313")
 	@Column(length = 313)
 	private String remedy;
 

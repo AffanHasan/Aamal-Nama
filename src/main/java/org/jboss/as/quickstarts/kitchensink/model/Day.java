@@ -8,6 +8,9 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import org.jboss.as.quickstarts.kitchensink.model.gunah.haqooqAllah.namaz.QazaFarzNamaz;
+import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.FarzNamaz;
+
 /**
  * Entity implementation class for Entity: Day
  *
@@ -24,13 +27,13 @@ public class Day extends BaseEntity implements Serializable{
 	private Date date;
 	
 	@OneToMany(mappedBy = "day", cascade = CascadeType.ALL)
-	private Set<Neky> goodDeeds = new HashSet<Neky>();
+	private Set<General> generalActivity = new HashSet<General>();
 	
 	@OneToMany(mappedBy = "day", cascade = CascadeType.ALL)
-	private Set<Gunah> badDeeds = new HashSet<Gunah>();
+	private Set<FarzNamaz> farzNamaz = new HashSet<FarzNamaz>();
 	
 	@OneToMany(mappedBy = "day", cascade = CascadeType.ALL)
-	private Set<Lagooh> useLessDeeds = new HashSet<Lagooh>();
+	private Set<QazaFarzNamaz> qazaFarzNamaz = new HashSet<QazaFarzNamaz>();	
 	
 	//BoilerPlate Getters & Setters
 	public Date getDate() {
@@ -39,26 +42,22 @@ public class Day extends BaseEntity implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
-	public Set<Neky> getGoodDeeds() {
-		return goodDeeds;
+	public Set<General> getGeneralActivity() {
+		return generalActivity;
 	}
-
-	public void setGoodDeeds(Set<Neky> goodDeeds) {
-		this.goodDeeds = goodDeeds;
+	public void setGeneralActivity(Set<General> generalActivity) {
+		this.generalActivity = generalActivity;
 	}
-
-	public Set<Gunah> getBadDeeds() {
-		return badDeeds;
+	public Set<FarzNamaz> getFarzNamaz() {
+		return farzNamaz;
 	}
-
-	public void setBadDeeds(Set<Gunah> badDeeds) {
-		this.badDeeds = badDeeds;
+	public void setFarzNamaz(Set<FarzNamaz> farzNamaz) {
+		this.farzNamaz = farzNamaz;
 	}
-	public Set<Lagooh> getUseLessDeeds() {
-		return useLessDeeds;
+	public Set<QazaFarzNamaz> getQazaFarzNamaz() {
+		return qazaFarzNamaz;
 	}
-	public void setUseLessDeeds(Set<Lagooh> useLessDeeds) {
-		this.useLessDeeds = useLessDeeds;
+	public void setQazaFarzNamaz(Set<QazaFarzNamaz> qazaFarzNamaz) {
+		this.qazaFarzNamaz = qazaFarzNamaz;
 	}
 }

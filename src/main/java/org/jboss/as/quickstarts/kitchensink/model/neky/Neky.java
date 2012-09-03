@@ -1,16 +1,18 @@
-package org.jboss.as.quickstarts.kitchensink.model;
+package org.jboss.as.quickstarts.kitchensink.model.neky;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.jboss.as.quickstarts.kitchensink.model.BaseActivity;
 
 /**
  * Entity implementation class for Entity: Neky
  * 
  * @author AffanHasan
  */
-@Entity
-@Table(name = "neky")
-public class Neky extends BaseActivity implements Serializable {
+
+@MappedSuperclass
+public abstract class Neky extends BaseActivity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
