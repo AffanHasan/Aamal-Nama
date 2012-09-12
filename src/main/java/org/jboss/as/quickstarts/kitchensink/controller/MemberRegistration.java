@@ -47,35 +47,19 @@ public class MemberRegistration {
       return newMember;
    }
 
-   public void register() throws Exception {
-      log.info("Registering " + newMember.getName());
-      em.persist(newMember);
+   public void register(Long id) throws Exception {
+//      log.info("Registering " + newMember.getName());
+//      em.persist(newMember);
 //    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful"));
-      memberEventSrc.fire(newMember);
-      
-      em.createQuery("select m from Member m order by m.name").getResultList();
-      initNewMember();
-      
-//
+//      memberEventSrc.fire(newMember);
+//      
+//      em.createQuery("select m from Member m order by m.name").getResultList();
+//      initNewMember();
+	   
 	   Day day = new Day();
 	   Date date = new Date();
 	   day.setDate(date);
-	   
-//	   Neky neky = new Neky();
-//	   neky.setDay(day);
-//	   neky.setStartTime(date);
-//	   neky.setDescription("Offered qaza Namaz");
-//	   neky.setImprovementNote("Leave every thing at the time of namaz; but however if it is qaza then perform it at the first sigh of relief");
-	   
-//	   Gunah gunah = new Gunah();
-//	   gunah.setDay(day);
-//	   gunah.setStartTime(date);
-//	   gunah.setDescription("Became leaked");
-//	   gunah.setRootCause("Lack of self control");
-//	   gunah.setRemedy("Always control yourself and look before you leap");
-	   
-//	   day.getGoodDeeds().add(neky);
-//	   day.getBadDeeds().add(gunah);
+	   day.setPersonId(id);
 	   em.persist(day);
    }
    

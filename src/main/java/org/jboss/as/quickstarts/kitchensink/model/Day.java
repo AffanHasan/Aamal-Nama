@@ -17,12 +17,16 @@ import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.FarzNam
  * @author AffanHasan
  */
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "date", "person_id"}))
 public class Day extends BaseEntity implements Serializable{
 
 	private static final long serialVersionUID = -7647690467575931834L;
 	
+	@Column(name = "person_id")
+	@NotNull(message = "An integer must be provided for person Id")
+	private Long personId;
+	
 	@NotNull
-	@Column(unique = true)
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	
@@ -59,5 +63,11 @@ public class Day extends BaseEntity implements Serializable{
 	}
 	public void setQazaFarzNamaz(Set<QazaFarzNamaz> qazaFarzNamaz) {
 		this.qazaFarzNamaz = qazaFarzNamaz;
+	}
+	public Long getPersonId() {
+		return personId;
+	}
+	public void setPersonId(Long personId) {
+		this.personId = personId;
 	}
 }

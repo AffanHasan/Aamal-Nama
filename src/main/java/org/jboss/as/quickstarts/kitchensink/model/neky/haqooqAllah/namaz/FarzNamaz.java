@@ -4,8 +4,8 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.FarzNamazHealthCategory;
-import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.NamazNames;
+import org.jboss.as.quickstarts.kitchensink.model.enums.FarzNamazHealthCategory;
+import org.jboss.as.quickstarts.kitchensink.model.enums.NamazNames;
 import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.Namaz;
 
 /**

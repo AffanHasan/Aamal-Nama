@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz;
+package org.jboss.as.quickstarts.kitchensink.model.enums;
 
 /**
  * A set of Farz namaz names

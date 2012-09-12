@@ -15,6 +15,8 @@ import org.jboss.as.quickstarts.kitchensink.model.Day;
 import org.jboss.as.quickstarts.kitchensink.model.General;
 import org.jboss.as.quickstarts.kitchensink.model.Lagooh;
 import org.jboss.as.quickstarts.kitchensink.model.Member;
+import org.jboss.as.quickstarts.kitchensink.model.enums.FarzNamazHealthCategory;
+import org.jboss.as.quickstarts.kitchensink.model.enums.NamazNames;
 import org.jboss.as.quickstarts.kitchensink.model.gunah.Gunah;
 import org.jboss.as.quickstarts.kitchensink.model.gunah.UncategorizedGunah;
 import org.jboss.as.quickstarts.kitchensink.model.gunah.haqooqAllah.namaz.QazaFarzNamaz;
@@ -22,8 +24,6 @@ import org.jboss.as.quickstarts.kitchensink.model.neky.Neky;
 import org.jboss.as.quickstarts.kitchensink.model.neky.UncategorizedNeky;
 import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.HaqooqAllah;
 import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.FarzNamaz;
-import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.FarzNamazHealthCategory;
-import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.NamazNames;
 import org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz.Namaz;
 import org.jboss.as.quickstarts.kitchensink.util.Resources;
 import org.jboss.shrinkwrap.api.Archive;
@@ -67,8 +67,9 @@ public class MemberRegistrationTest {
       newMember.setName("Jane Doe");
       newMember.setEmail("jane@mailinator.com");
       newMember.setPhoneNumber("2125551234");
-      memberRegistration.register();
-      assertNotNull(newMember.getId());
+      memberRegistration.register(2L);
+//      assertNotNull(newMember.getId());
+      memberRegistration.register(3L);
       log.info(newMember.getName() + " was persisted with id " + newMember.getId());
    }
 }

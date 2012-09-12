@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.model.neky.haqooqAllah.namaz;
+package org.jboss.as.quickstarts.kitchensink.model.enums;
 
 /**
  * A Namaz category means health of a Namaz
